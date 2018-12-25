@@ -27,7 +27,7 @@ export default class DemoEntry extends cc.Component {
         this._closeButton.addRelation(fgui.GRoot.inst, fgui.RelationType.Right_Right);
         this._closeButton.addRelation(fgui.GRoot.inst, fgui.RelationType.Top_Top);
         //设置组件层级
-        this._closeButton.sortingOrder = 100000;
+        this._closeButton.sortingOrder = 100;
         this._closeButton.onClick(this.onExampleClose, this);
         fgui.GRoot.inst.addChild(this._closeButton);
         

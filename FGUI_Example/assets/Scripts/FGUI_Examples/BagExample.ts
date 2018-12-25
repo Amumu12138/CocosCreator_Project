@@ -62,7 +62,7 @@ class BagWindow extends fgui.Window {
      */
     private renderListItem(index: number, obj: fgui.GObject) {
         obj.icon = "Icons/i" + Math.floor(Math.random() * 10);
-        obj.text  = "" + Math.floor(Math.random() * 50);
+        obj.text = "" + Math.floor(Math.random() * 50);
     }
     /**
      * @description: 点击物品事件

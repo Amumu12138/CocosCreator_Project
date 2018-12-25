@@ -15,7 +15,7 @@ export default class Package1 extends cc.Component {
         this._view = fgui.UIPackage.createObject("Package1", "Component1").asCom;
         //填充场景
         this._view.makeFullScreen();
-        //添加到Fgui根目录下
+        //添加到fgui根目录下
         fgui.GRoot.inst.addChild(this._view);
     }
 

@@ -1,6 +1,7 @@
 
 const {ccclass, property} = cc._decorator;
 import BagExample from "./BagExample";
+import ChatExample from "./ChatExample";
 
 @ccclass
 export default class MainMenu extends cc.Component {
@@ -23,6 +24,9 @@ export default class MainMenu extends cc.Component {
 
         this._view.getChild("bagBtn").onClick(function() {
             this.startExample(BagExample);
+        }, this);
+        this._view.getChild("chatBtn").onClick(function() {
+            this.startExample(ChatExample);
         }, this);
     }
     /**
