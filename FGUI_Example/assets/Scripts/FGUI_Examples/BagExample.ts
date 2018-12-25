@@ -44,6 +44,11 @@ class BagWindow extends fgui.Window {
      * @description: 显示界面
      */
     protected onShown() {
+        //物品显示界面
+        let frame = this.contentPane.getChild("frame").asCom;
+        //点击关闭按钮隐藏界面
+        frame.getChild("n3").onClick(() => { this.hide(); }, this);
+
         let list: fgui.GList = this.contentPane.getChild("list").asList;
         list.on(fgui.Event.CLICK_ITEM, this.onClickItem, this);
         list.itemRenderer = this.renderListItem.bind(this);

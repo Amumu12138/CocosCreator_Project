@@ -12,29 +12,30 @@ export default class DemoEntry extends cc.Component {
         fgui.addLoadHandler();
         fgui.GRoot.create();
 
-        this.node.on("start_example", this.onDemoStart, this);
+        this.node.on("start_example", this.onExampleStart, this);
         this.addComponent(MainMenu);
     }
     /**
      * @description: 添加主界面MainMenu
      * @param example 示例类
      */
-    public onDemoStart(example: cc.Component) {
+    public onExampleStart(example: cc.Component) {
         this._currentExample = example;
         this._closeButton = fgui.UIPackage.createObject("MainMenu", "CloseButton");
-        this._closeButton.setPosition(fgui.GRoot.inst.width - this._closeButton.width - 10, fgui.GRoot.inst.height - this._closeButton.height - 10);
+        this._closeButton.setPosition(fgui.GRoot.inst.width - this._closeButton.width - 10, 10);
         //设置组件跟容器关联对齐
         this._closeButton.addRelation(fgui.GRoot.inst, fgui.RelationType.Right_Right);
-        this._closeButton.addRelation(fgui.GRoot.inst, fgui.RelationType.Bottom_Bottom);
+        this._closeButton.addRelation(fgui.GRoot.inst, fgui.RelationType.Top_Top);
         //设置组件层级
         this._closeButton.sortingOrder = 100000;
-        this._closeButton.onClick(this.onDemoClose, this);
+        this._closeButton.onClick(this.onExampleClose, this);
         fgui.GRoot.inst.addChild(this._closeButton);
+        
     }
     /**
      * @description: 单击按钮关闭界面
      */
-    public onDemoClose() {
+    public onExampleClose() {
         fgui.GRoot.inst.removeChildren(0, -1 ,true);
         this.node.removeComponent(this._currentExample);
         this.addComponent(MainMenu);

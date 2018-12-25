@@ -30,6 +30,7 @@ export default class MainMenu extends cc.Component {
      * @param exampleClass 相对应的界面类
      */
     public startExample(exampleClass: typeof cc.Component) {
+        this._view.dispose();
         let example: cc.Component = this.addComponent(exampleClass);
         this.node.emit("start_example", example);
         this.destroy();
