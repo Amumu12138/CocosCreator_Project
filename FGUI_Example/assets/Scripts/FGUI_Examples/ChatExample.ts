@@ -132,7 +132,7 @@ export default class ChatExample extends cc.Component {
      * @param item： 选中表情
      */
     private onClickEmoji(item: fgui.GObject) {
-        this._input.text += this._emojiParser.parse("[:"+ item.text + "]");
+        this._input.text += "[:"+ item.text + "]";
     }
 
     /**
